@@ -1,0 +1,40 @@
+# a class responsible for maintaining a certain framerate, and dispathing
+# events to inform other objects that they require animating.
+define ['jquery', 'constants', 'logging', 'views/canvas'], ($, constants, log, canvas) ->
+  class Animator
+    constructor: ->
+      @lockFPS = true
+      $("#lock_fps").change (event) =>
+        @lockFPS = $("#lock_fps").attr("checked")
+        log.debug "lock fps now set to: #{@lockFPS}"
+
+    framerate: Math.round(1000 / constants.framesPerSecond)
+
+    listeners: []
+
+    addListener: (fn) => @listeners.push(fn)
+
+    removeListener: (fn) =>
+      for index in [0..@listeners.length]
+        if @listeners[index] == fn
+          @listeners.splice(index, 1)
+
+    start: => @performLoop()
+
+    updateFPS: (value) ->
+      $("#current_fps").text(value)
+
+    performLoop: =>
+      start = new Date().getTime()
+      l() for l in @listeners
+      duration = new Date().getTime() - start
+      if @lockFPS
+        next = @framerate - duration
+        next = 0 if next <= 0
+      else
+        next = 0
+
+      @updateFPS(Math.round(1000 / duration))
+      setTimeout(@performLoop, next)
+
+  return new Animator()

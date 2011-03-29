@@ -1,0 +1,59 @@
+<html>
+	<head>
+		<script src="../scripts/coffee-script.js"></script> 
+		<script src="../scripts/jquery-1.5.1.js"></script> 
+		<script type="text/coffeescript" src="hexagon-math.coffee"></script>
+		<script type="text/coffeescript">
+			initialize = ->
+			  @canvas  = $("#canvas")[0]
+			  @context = canvas.getContext("2d")
+			  @board   = new HexaBoard 7, 4, 45, 30
+
+			  redrawCanvas()
+
+			  $("#canvas").mousemove (event) ->
+			    board.enableAtPoint(event.pageX, event.pageY)
+			    redrawCanvas()
+			
+			  $("#canvas").click (event) ->
+          board.toggleAtPoint(event.pageX, event.pageY)
+          redrawCanvas()
+
+			redrawCanvas = ->
+  			@context.clearRect(0, 0, @canvas.width, @canvas.height)
+			  @context.lineWidth=5;
+
+			  @context.strokeStyle="#053863";
+
+			  @board.each (grid) -> 
+			    @context.beginPath()
+			    grid.draw(@context)
+
+			    if @board.selected == grid
+			      @context.font = "bold 50px sans-serif";
+			      @context.lineCap="round";
+			      #@context.fillStyle="#8ED6FF";
+			      #@context.fill()
+    			  @context.fillStyle="#00F";
+			      @context.fillText("X", @board.selected.centerX - 16, @board.selected.centerY + 18)
+
+			    @context.stroke()
+			    @context.closePath()
+
+			$(document).ready ->
+			  # javascript hack - since the coffeescript is loaded after
+			  # this point.
+			  setTimeout(initialize, 500)
+
+		</script>
+	</head>
+
+	<title>Hexagon Coordinate Math Demo</title>
+
+	<body>
+		<canvas width="500" height="400" id="canvas">Your browser doesn't support Canvas YO!</canvas><br>
+		<input type="button" onclick="document.location.href = $('#canvas')[0].toDataURL('image/jpeg').replace('image/jpeg', 'image/octet-stream') ; return false" value="Save As JPEG"/>
+	</body>
+
+	
+</html>

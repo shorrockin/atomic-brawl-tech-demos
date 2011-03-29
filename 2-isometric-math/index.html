@@ -1,0 +1,66 @@
+<html>
+  <head>
+    <script src="../scripts/coffee-script.js"></script> 
+    <script src="../scripts/jquery-1.5.1.js"></script> 
+    <script type="text/coffeescript" src="hexagon-math.coffee"></script>
+    <script type="text/coffeescript">
+ 	    @image = new Image()
+      @image.src = "../images/hex_tile.png"
+
+      initialize = ->
+        @canvas  = $("#canvas")[0]
+        @context = canvas.getContext("2d")
+        @board   = new HexaBoard(12, 11, 45)
+
+        @board.toggle(0, 0).toggle(1, 0).toggle(2, 0).toggle(0, 1)
+        @board.toggle(6, 0).toggle(7, 0).toggle(8, 0).toggle(9, 0).toggle(10, 0).toggle(11, 0)
+        @board.toggle(8, 1).toggle(9, 1).toggle(10, 1).toggle(11, 1).toggle(10, 2).toggle(11, 2)
+        @board.toggle(0, 8).toggle(0, 9).toggle(0, 10).toggle(1, 8).toggle(1, 9).toggle(1, 10)
+        @board.toggle(2, 9).toggle(2, 10).toggle(3, 9).toggle(3, 10).toggle(4, 10)
+        @board.toggle(5, 10).toggle(11, 9).toggle(9, 10).toggle(10, 10).toggle(11, 10)
+
+        redrawCanvas()
+
+        $("#canvas").mousemove (event) ->
+          board.enableAtPoint(event.pageX, event.pageY)
+          redrawCanvas()
+
+        $("#canvas").click (event) ->
+          board.toggleAtPoint(event.pageX, event.pageY)
+          redrawCanvas()
+
+      redrawCanvas = ->
+        @context.clearRect(0, 0, @canvas.width, @canvas.height)
+        @context.lineWidth=3;
+        @context.strokeStyle="#0000ff";
+
+        @board.each (grid) -> 
+          @context.beginPath()
+          @context.drawImage(@image, grid.x, grid.y) if grid.enabled
+          grid.draw(@context)
+
+          if @board.selected == grid
+            @context.font = "bold 25px sans-serif";
+            @context.lineCap="round";
+            @context.fillStyle="rgba(35,89,42,0.2)";
+            @context.fill()
+            @context.fillStyle="rgba(255,255,255,0.2)";
+            @context.fillText("#{@board.selected.horizontalIndex},#{@board.selected.verticalIndex}", @board.selected.centerX - 20, @board.selected.centerY + 8)
+
+          #@context.stroke()
+          @context.closePath()
+
+      $(document).ready ->
+        # javascript hack - since the coffeescript is loaded after
+        # this point.
+        setTimeout(initialize, 500)
+
+    </script>
+  </head>
+
+  <title>Hexagon Coordinate Math Demo</title>
+
+  <body>
+    <canvas width="900" height="600" id="canvas">Your browser doesn't support Canvas YO!</canvas>
+  </body>
+</html>

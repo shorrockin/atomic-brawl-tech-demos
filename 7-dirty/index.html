@@ -1,0 +1,24 @@
+<html>
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+	<meta name="viewport" content="user-scalable=no, width=device-width" />
+  <head>
+		<script data-main="scripts/main" src="scripts/require.js"></script>
+  </head>
+
+  <title>Dirty Redraw Testing</title>
+
+  <body>
+		<center>
+      <canvas width="1000" height="500" id="canvas">Your browser doesn't support Canvas YO!</canvas>
+			<form>
+				<input id="lock_fps" type="checkbox" checked>Lock FPS</input>
+				<input id="run_animation" type="checkbox" checked>Run Animation Loop</input>
+				<input id="enable_dirty" type="checkbox">Enable Dirty Regions</input>
+				<br>
+				FPS: <span id="current_fps">N/A</span> (last 10 frames)
+
+			</form>
+		</center>
+  </body>
+</html>

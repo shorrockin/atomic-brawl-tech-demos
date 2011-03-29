@@ -1,0 +1,267 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0049)http://chimp.local:3000/chimp-admin/beneficiaries -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>Chimp Admin</title>
+    
+    <link rel="stylesheet" href="./Chimp Admin_files/reset.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="./Chimp Admin_files/style.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="./Chimp Admin_files/admin.css" type="text/css" media="screen">
+
+    <!-- Invalid Stylesheet. This makes stuff look pretty. Remove it if you want the CSS completely valid -->
+    <link rel="stylesheet" href="./Chimp Admin_files/invalid.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="./Chimp Admin_files/blue.css" type="text/css" media="screen">
+
+    <link rel="stylesheet" href="./Chimp Admin_files/jquery-ui-1.8.2.custom.css" type="text/css" media="screen">
+
+    <!--[if lte IE 7]>
+      <link rel="stylesheet" href="/admin/css/ie.css" type="text/css" media="screen" />
+    <![endif]-->
+
+    <script type="text/javascript" async="" src="./Chimp Admin_files/ga.js"></script><script type="text/javascript" src="./Chimp Admin_files/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="./Chimp Admin_files/jquery-ui-1.8.2.custom.min.js"></script>
+
+    <script type="text/javascript" src="./Chimp Admin_files/simpla.jquery.configuration.js"></script>
+    <script type="text/javascript" src="./Chimp Admin_files/facebox.js"></script>
+    <script type="text/javascript" src="./Chimp Admin_files/jquery.wysiwyg.js"></script>
+    <script type="text/javascript" src="./Chimp Admin_files/admin.js"></script>
+
+	<meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="aadkg07HXJHPK0p0iKfwjoQfLw3mrl4h6F3zFYvrRgo=">
+	<script src="./Chimp Admin_files/rails.js" type="text/javascript"></script>
+
+    <!--[if IE 6]>
+      <script type="text/javascript" src="/admin/scripts/DD_belatedPNG_0.0.7a.js"></script>
+      <script type="text/javascript">
+        DD_belatedPNG.fix('.png_bg, img, li');
+      </script>
+    <![endif]-->
+
+    
+
+  </head>
+  
+  <body><div id="body-wrapper"> <!-- Wrapper for the radial gradient background -->
+    
+    <div id="sidebar"><div id="sidebar-wrapper"> <!-- Sidebar with logo and menu -->
+      <h1 id="sidebar-title"><a href="http://chimp.local:3000/chimp-admin/dashboard">Chimp</a></h1>
+
+      <!-- Sidebar Profile links -->
+      <div id="profile-links">
+        Hello, Christopher Shorrock<br>
+        <br>
+        <select name="navigation" id="navigation-select" style="width: 190px;">
+          <option value="">Go to...</option>
+          <optgroup label="Donor Account:"><option value="/contexts/16">My Fund</option></optgroup><optgroup label="Administration:"><option value="/contexts/182">Chimp Über Admin</option></optgroup><optgroup label="Company Administration:"><option value="/contexts/690">ChimpTech</option>
+<option value="/contexts/196">Test Company Co.</option></optgroup>
+        </select>
+        <a href="http://chimp.local:3000/logout">Log out</a>
+      </div>        
+      
+      <ul id="main-nav">  <!-- Accordion Menu -->
+          <li><a href="http://chimp.local:3000/chimp-admin/dashboard" class="nav-top-item no-submenu ">Dashboard</a></li><li><a href="http://chimp.local:3000/chimp-admin/beneficiaries#" class="nav-top-item  current" style="padding-right: 15px; ">Browse</a><ul><li><a href="./Chimp Admin_files/Chimp Admin.html" class="current">Beneficiaries</a></li><li><a href="http://chimp.local:3000/chimp-admin/companies">Company Funds</a></li><li><a href="http://chimp.local:3000/chimp-admin/users">Donor Funds</a></li><li><a href="http://chimp.local:3000/chimp-admin/donations">Donations</a></li><li><a href="http://chimp.local:3000/chimp-admin/recurring_donations">Recurring Donations</a></li><li><a href="http://chimp.local:3000/chimp-admin/allocations">Allocations</a></li><li><a href="http://chimp.local:3000/chimp-admin/fund_allocations">P2P Allocations</a></li><li><a href="http://chimp.local:3000/chimp-admin/bounced_fund_allocations">P2P Allocation Bounces</a></li><li><a href="http://chimp.local:3000/chimp-admin/disbursements">Disbursements</a></li><li><a href="http://chimp.local:3000/chimp-admin/payments">Payments</a></li><li><a href="http://chimp.local:3000/chimp-admin/whitelist">Email Whitelist</a></li><li><a href="http://chimp.local:3000/chimp-admin/emails">Email Queue</a></li><li><a href="http://chimp.local:3000/chimp-admin/jobs">Delayed Jobs</a></li></ul></li><li><a href="http://chimp.local:3000/chimp-admin/beneficiaries#" class="nav-top-item  ">Browse Accounts</a><ul><li><a href="http://chimp.local:3000/chimp-admin/account-by-code/CF/BANK">Chimp Float</a></li><li><a href="http://chimp.local:3000/chimp-admin/account-by-code/CF/FEES">Chimp Fees</a></li></ul></li><li><a href="http://chimp.local:3000/chimp-admin/beneficiaries#" class="nav-top-item  ">Reports</a><ul><li><a href="http://chimp.local:3000/chimp-admin/reports">Reports</a></li></ul></li><li><a href="http://chimp.local:3000/chimp-admin/beneficiaries#" class="nav-top-item  ">Site Usage</a><ul><li><a href="http://chimp.local:3000/chimp-admin/activity_logs">Activity Logs</a></li><li><a href="http://chimp.local:3000/chimp-admin/feedback">User Feedback</a></li><li><a href="http://chimp.local:3000/chimp-admin/search_terms">Search Terms</a></li><li><a href="http://chimp.local:3000/chimp-admin/stats">Stats</a></li><li><a href="http://chimp.local:3000/chimp-admin/retention">Retention</a></li><li><a href="http://chimp.local:3000/chimp-admin/ab">A/B Test Results</a></li></ul></li><li><a href="http://chimp.local:3000/chimp-admin/beneficiaries#" class="nav-top-item  ">Manage</a><ul><li><a href="http://chimp.local:3000/chimp-admin/categories">Beneficiary Categories</a></li><li><a href="http://chimp.local:3000/chimp-admin/faqs">FAQ</a></li><li><a href="http://chimp.local:3000/chimp-admin/utilities">Utilities</a></li></ul></li>
+      </ul> <!-- End #main-nav -->
+      
+    </div></div> <!-- End #sidebar -->
+    
+    <div id="main-content"> <!-- Main Content Section with everything -->
+
+      <h2></h2>
+
+      
+      <div class="content-box">
+  <div class="content-box-header">
+    <h3>Search Beneficiaries</h3>
+  </div>
+
+  <div class="content-box-content">
+    
+    <form accept-charset="UTF-8" action="./Chimp Admin_files/Chimp Admin.html" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"></div>
+      <p>
+        <label for="query">Search For Charity by Business name or number</label>
+        <input class="text-input medium-input" id="query" name="query" type="text">
+      </p>
+      <input class="button" name="commit" type="submit" value="Find my Charity!">
+</form>
+      <table>
+        <thead>
+          <tr>
+             <th>Charity Name</th>
+             <th style="text-align: center">Last Known Status</th>
+             <th style="text-align: center">Exists In CRA Database</th>
+             <th>Edit</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr class="alt-row">
+  <td><a href="http://chimp.local:3000/chimp-admin/beneficiaries/825-elks-royal-canadian-air-cadet-squadron-unit-fund">"825 Elks" Royal Canadian Air Cadet Squadron Unit Fund</a></td>
+  <td style="text-align: center"><img alt="Cross" src="./Chimp Admin_files/cross.png" title="&quot;825 Elks&quot; Royal Canadian Air Cadet Squadron Unit Fund has had their charity status revoked."></td>
+  <td style="text-align: center"><img alt="Tick" src="./Chimp Admin_files/tick.png" title="&quot;825 Elks&quot; Royal Canadian Air Cadet Squadron Unit Fund exists in the CRA database."></td>
+  <td><a href="http://chimp.local:3000/admin/for/825-elks-royal-canadian-air-cadet-squadron-unit-fund"><img alt="Application_form_edit" src="./Chimp Admin_files/application_form_edit.png" title="Edit details for &quot;825 Elks&quot; Royal Canadian Air Cadet Squadron Unit Fund"></a></td>
+</tr>
+<tr>
+  <td><a href="http://chimp.local:3000/chimp-admin/beneficiaries/action-autonomie-le-collectif-pour-la-defense-des-droits-en-sante-mentale-de-montreal">"Action Autonomie" Le Collectif Pour La Defense Des Droits En Sante Mentale De Montreal</a></td>
+  <td style="text-align: center"><img alt="Tick" src="./Chimp Admin_files/tick.png" title="&quot;Action Autonomie&quot; Le Collectif Pour La Defense Des Droits En Sante Mentale De Montreal&#39;s status is OK, but they have not yet registered with Chimp."></td>
+  <td style="text-align: center"><img alt="Tick" src="./Chimp Admin_files/tick.png" title="&quot;Action Autonomie&quot; Le Collectif Pour La Defense Des Droits En Sante Mentale De Montreal exists in the CRA database."></td>
+  <td><a href="http://chimp.local:3000/admin/for/action-autonomie-le-collectif-pour-la-defense-des-droits-en-sante-mentale-de-montreal"><img alt="Application_form_edit" src="./Chimp Admin_files/application_form_edit.png" title="Edit details for &quot;Action Autonomie&quot; Le Collectif Pour La Defense Des Droits En Sante Mentale De Montreal"></a></td>
+</tr>
+<tr class="alt-row">
+  <td><a href="http://chimp.local:3000/chimp-admin/beneficiaries/aid-to-aids-ontario">"Aid To Aids" (Ontario)</a></td>
+  <td style="text-align: center"><img alt="Cross" src="./Chimp Admin_files/cross.png" title="&quot;Aid To Aids&quot; (Ontario) has had their charity status revoked."></td>
+  <td style="text-align: center"><img alt="Tick" src="./Chimp Admin_files/tick.png" title="&quot;Aid To Aids&quot; (Ontario) exists in the CRA database."></td>
+  <td><a href="http://chimp.local:3000/admin/for/aid-to-aids-ontario"><img alt="Application_form_edit" src="./Chimp Admin_files/application_form_edit.png" title="Edit details for &quot;Aid To Aids&quot; (Ontario)"></a></td>
+</tr>
+<tr>
+  <td><a href="http://chimp.local:3000/chimp-admin/beneficiaries/alpha-hymanitaz-centre-de-formation-en-alphabetisation-inc">"Alpha Hymanitaz" Centre De Formation En Alphabetisation Inc</a></td>
+  <td style="text-align: center"><img alt="Cross" src="./Chimp Admin_files/cross.png" title="&quot;Alpha Hymanitaz&quot; Centre De Formation En Alphabetisation Inc has had their charity status revoked."></td>
+  <td style="text-align: center"><img alt="Tick" src="./Chimp Admin_files/tick.png" title="&quot;Alpha Hymanitaz&quot; Centre De Formation En Alphabetisation Inc exists in the CRA database."></td>
+  <td><a href="http://chimp.local:3000/admin/for/alpha-hymanitaz-centre-de-formation-en-alphabetisation-inc"><img alt="Application_form_edit" src="./Chimp Admin_files/application_form_edit.png" title="Edit details for &quot;Alpha Hymanitaz&quot; Centre De Formation En Alphabetisation Inc"></a></td>
+</tr>
+<tr class="alt-row">
+  <td><a href="http://chimp.local:3000/chimp-admin/beneficiaries/apres-coup">"Apres Coup"</a></td>
+  <td style="text-align: center"><img alt="Cross" src="./Chimp Admin_files/cross.png" title="&quot;Apres Coup&quot; has had their charity status revoked."></td>
+  <td style="text-align: center"><img alt="Tick" src="./Chimp Admin_files/tick.png" title="&quot;Apres Coup&quot; exists in the CRA database."></td>
+  <td><a href="http://chimp.local:3000/admin/for/apres-coup"><img alt="Application_form_edit" src="./Chimp Admin_files/application_form_edit.png" title="Edit details for &quot;Apres Coup&quot;"></a></td>
+</tr>
+<tr>
+  <td><a href="http://chimp.local:3000/chimp-admin/beneficiaries/argus-residence-for-young-people">"Argus"  Residence For Young People</a></td>
+  <td style="text-align: center"><img alt="Tick" src="./Chimp Admin_files/tick.png" title="&quot;Argus&quot;  Residence For Young People&#39;s status is OK, but they have not yet registered with Chimp."></td>
+  <td style="text-align: center"><img alt="Tick" src="./Chimp Admin_files/tick.png" title="&quot;Argus&quot;  Residence For Young People exists in the CRA database."></td>
+  <td><a href="http://chimp.local:3000/admin/for/argus-residence-for-young-people"><img alt="Application_form_edit" src="./Chimp Admin_files/application_form_edit.png" title="Edit details for &quot;Argus&quot;  Residence For Young People"></a></td>
+</tr>
+<tr class="alt-row">
+  <td><a href="http://chimp.local:3000/chimp-admin/beneficiaries/au-12-17-maison-des-jeunes-de-st-redempteur">"Au 12 17" Maison Des Jeunes De St Redempteur</a></td>
+  <td style="text-align: center"><img alt="Tick" src="./Chimp Admin_files/tick.png" title="&quot;Au 12 17&quot; Maison Des Jeunes De St Redempteur&#39;s status is OK, but they have not yet registered with Chimp."></td>
+  <td style="text-align: center"><img alt="Tick" src="./Chimp Admin_files/tick.png" title="&quot;Au 12 17&quot; Maison Des Jeunes De St Redempteur exists in the CRA database."></td>
+  <td><a href="http://chimp.local:3000/admin/for/au-12-17-maison-des-jeunes-de-st-redempteur"><img alt="Application_form_edit" src="./Chimp Admin_files/application_form_edit.png" title="Edit details for &quot;Au 12 17&quot; Maison Des Jeunes De St Redempteur"></a></td>
+</tr>
+<tr>
+  <td><a href="http://chimp.local:3000/chimp-admin/beneficiaries/ayden-byle-diabetes-research-foundation">"Ayden Byle Diabetes Research Foundation"</a></td>
+  <td style="text-align: center"><img alt="Cross" src="./Chimp Admin_files/cross.png" title="&quot;Ayden Byle Diabetes Research Foundation&quot; has had their charity status revoked."></td>
+  <td style="text-align: center"><img alt="Tick" src="./Chimp Admin_files/tick.png" title="&quot;Ayden Byle Diabetes Research Foundation&quot; exists in the CRA database."></td>
+  <td><a href="http://chimp.local:3000/admin/for/ayden-byle-diabetes-research-foundation"><img alt="Application_form_edit" src="./Chimp Admin_files/application_form_edit.png" title="Edit details for &quot;Ayden Byle Diabetes Research Foundation&quot;"></a></td>
+</tr>
+<tr class="alt-row">
+  <td><a href="http://chimp.local:3000/chimp-admin/beneficiaries/balloons-for-bobbie-committee">"Balloons For Bobbie" Committee</a></td>
+  <td style="text-align: center"><img alt="Cross" src="./Chimp Admin_files/cross.png" title="&quot;Balloons For Bobbie&quot; Committee has had their charity status revoked."></td>
+  <td style="text-align: center"><img alt="Tick" src="./Chimp Admin_files/tick.png" title="&quot;Balloons For Bobbie&quot; Committee exists in the CRA database."></td>
+  <td><a href="http://chimp.local:3000/admin/for/balloons-for-bobbie-committee"><img alt="Application_form_edit" src="./Chimp Admin_files/application_form_edit.png" title="Edit details for &quot;Balloons For Bobbie&quot; Committee"></a></td>
+</tr>
+<tr>
+  <td><a href="http://chimp.local:3000/chimp-admin/beneficiaries/bethesda-romanian-church-of-god">"Bethesda" Romanian Church Of God</a></td>
+  <td style="text-align: center"><img alt="Tick" src="./Chimp Admin_files/tick.png" title="&quot;Bethesda&quot; Romanian Church Of God&#39;s status is OK, but they have not yet registered with Chimp."></td>
+  <td style="text-align: center"><img alt="Tick" src="./Chimp Admin_files/tick.png" title="&quot;Bethesda&quot; Romanian Church Of God exists in the CRA database."></td>
+  <td><a href="http://chimp.local:3000/admin/for/bethesda-romanian-church-of-god"><img alt="Application_form_edit" src="./Chimp Admin_files/application_form_edit.png" title="Edit details for &quot;Bethesda&quot; Romanian Church Of God"></a></td>
+</tr>
+<tr class="alt-row">
+  <td><a href="http://chimp.local:3000/chimp-admin/beneficiaries/between-friendsentre-amies">"Between Friends/Entre Amies"</a></td>
+  <td style="text-align: center"><img alt="Cross" src="./Chimp Admin_files/cross.png" title="&quot;Between Friends/Entre Amies&quot; has had their charity status revoked."></td>
+  <td style="text-align: center"><img alt="Tick" src="./Chimp Admin_files/tick.png" title="&quot;Between Friends/Entre Amies&quot; exists in the CRA database."></td>
+  <td><a href="http://chimp.local:3000/admin/for/between-friendsentre-amies"><img alt="Application_form_edit" src="./Chimp Admin_files/application_form_edit.png" title="Edit details for &quot;Between Friends/Entre Amies&quot;"></a></td>
+</tr>
+<tr>
+  <td><a href="http://chimp.local:3000/chimp-admin/beneficiaries/by-the-sea-sayward-nursery-school-association">"By The Sea" Sayward Nursery School Association</a></td>
+  <td style="text-align: center"><img alt="Cross" src="./Chimp Admin_files/cross.png" title="&quot;By The Sea&quot; Sayward Nursery School Association has had their charity status revoked."></td>
+  <td style="text-align: center"><img alt="Tick" src="./Chimp Admin_files/tick.png" title="&quot;By The Sea&quot; Sayward Nursery School Association exists in the CRA database."></td>
+  <td><a href="http://chimp.local:3000/admin/for/by-the-sea-sayward-nursery-school-association"><img alt="Application_form_edit" src="./Chimp Admin_files/application_form_edit.png" title="Edit details for &quot;By The Sea&quot; Sayward Nursery School Association"></a></td>
+</tr>
+<tr class="alt-row">
+  <td><a href="http://chimp.local:3000/chimp-admin/beneficiaries/cafe-communautaire-lentre-gens-de-sainte-adelecomte-rousseau">"Cafe Communautaire L'entre Gens" De Sainte Adele,Comte Rousseau</a></td>
+  <td style="text-align: center"><img alt="Tick" src="./Chimp Admin_files/tick.png" title="&quot;Cafe Communautaire L&#39;entre Gens&quot; De Sainte Adele,Comte Rousseau&#39;s status is OK, but they have not yet registered with Chimp."></td>
+  <td style="text-align: center"><img alt="Tick" src="./Chimp Admin_files/tick.png" title="&quot;Cafe Communautaire L&#39;entre Gens&quot; De Sainte Adele,Comte Rousseau exists in the CRA database."></td>
+  <td><a href="http://chimp.local:3000/admin/for/cafe-communautaire-lentre-gens-de-sainte-adelecomte-rousseau"><img alt="Application_form_edit" src="./Chimp Admin_files/application_form_edit.png" title="Edit details for &quot;Cafe Communautaire L&#39;entre Gens&quot; De Sainte Adele,Comte Rousseau"></a></td>
+</tr>
+<tr>
+  <td><a href="http://chimp.local:3000/chimp-admin/beneficiaries/camp-courage-the-first-responders-society">"Camp Courage" The First Responder's Society</a></td>
+  <td style="text-align: center"><img alt="Tick" src="./Chimp Admin_files/tick.png" title="&quot;Camp Courage&quot; The First Responder&#39;s Society&#39;s status is OK, but they have not yet registered with Chimp."></td>
+  <td style="text-align: center"><img alt="Tick" src="./Chimp Admin_files/tick.png" title="&quot;Camp Courage&quot; The First Responder&#39;s Society exists in the CRA database."></td>
+  <td><a href="http://chimp.local:3000/admin/for/camp-courage-the-first-responders-society"><img alt="Application_form_edit" src="./Chimp Admin_files/application_form_edit.png" title="Edit details for &quot;Camp Courage&quot; The First Responder&#39;s Society"></a></td>
+</tr>
+<tr class="alt-row">
+  <td><a href="http://chimp.local:3000/chimp-admin/beneficiaries/canadian-mental-health-association-winnipeg-region-inc">"Canadian Mental Health Association, Winnipeg Region, Inc."</a></td>
+  <td style="text-align: center"><img alt="Tick" src="./Chimp Admin_files/tick.png" title="&quot;Canadian Mental Health Association, Winnipeg Region, Inc.&quot;&#39;s status is OK, but they have not yet registered with Chimp."></td>
+  <td style="text-align: center"><img alt="Tick" src="./Chimp Admin_files/tick.png" title="&quot;Canadian Mental Health Association, Winnipeg Region, Inc.&quot; exists in the CRA database."></td>
+  <td><a href="http://chimp.local:3000/admin/for/canadian-mental-health-association-winnipeg-region-inc"><img alt="Application_form_edit" src="./Chimp Admin_files/application_form_edit.png" title="Edit details for &quot;Canadian Mental Health Association, Winnipeg Region, Inc.&quot;"></a></td>
+</tr>
+<tr>
+  <td><a href="http://chimp.local:3000/chimp-admin/beneficiaries/caring-hearts-for-underprivileged-children-society">"Caring Hearts" For Underprivileged Children Society</a></td>
+  <td style="text-align: center"><img alt="Tick" src="./Chimp Admin_files/tick.png" title="&quot;Caring Hearts&quot; For Underprivileged Children Society&#39;s status is OK, but they have not yet registered with Chimp."></td>
+  <td style="text-align: center"><img alt="Tick" src="./Chimp Admin_files/tick.png" title="&quot;Caring Hearts&quot; For Underprivileged Children Society exists in the CRA database."></td>
+  <td><a href="http://chimp.local:3000/admin/for/caring-hearts-for-underprivileged-children-society"><img alt="Application_form_edit" src="./Chimp Admin_files/application_form_edit.png" title="Edit details for &quot;Caring Hearts&quot; For Underprivileged Children Society"></a></td>
+</tr>
+<tr class="alt-row">
+  <td><a href="http://chimp.local:3000/chimp-admin/beneficiaries/centre-dorganisation-mauricien-de-services-et-deducation-populaire-comsep">"Centre D'organisation Mauricien De Services Et D'education Populaire" (C.O.M.S.E.P.)</a></td>
+  <td style="text-align: center"><img alt="Tick" src="./Chimp Admin_files/tick.png" title="&quot;Centre D&#39;organisation Mauricien De Services Et D&#39;education Populaire&quot; (C.O.M.S.E.P.)&#39;s status is OK, but they have not yet registered with Chimp."></td>
+  <td style="text-align: center"><img alt="Tick" src="./Chimp Admin_files/tick.png" title="&quot;Centre D&#39;organisation Mauricien De Services Et D&#39;education Populaire&quot; (C.O.M.S.E.P.) exists in the CRA database."></td>
+  <td><a href="http://chimp.local:3000/admin/for/centre-dorganisation-mauricien-de-services-et-deducation-populaire-comsep"><img alt="Application_form_edit" src="./Chimp Admin_files/application_form_edit.png" title="Edit details for &quot;Centre D&#39;organisation Mauricien De Services Et D&#39;education Populaire&quot; (C.O.M.S.E.P.)"></a></td>
+</tr>
+<tr>
+  <td><a href="http://chimp.local:3000/chimp-admin/beneficiaries/chants-libres-compagnie-lyrique-de-creation">"Chants Libres" Compagnie Lyrique De Creation</a></td>
+  <td style="text-align: center"><img alt="Tick" src="./Chimp Admin_files/tick.png" title="&quot;Chants Libres&quot; Compagnie Lyrique De Creation&#39;s status is OK, but they have not yet registered with Chimp."></td>
+  <td style="text-align: center"><img alt="Tick" src="./Chimp Admin_files/tick.png" title="&quot;Chants Libres&quot; Compagnie Lyrique De Creation exists in the CRA database."></td>
+  <td><a href="http://chimp.local:3000/admin/for/chants-libres-compagnie-lyrique-de-creation"><img alt="Application_form_edit" src="./Chimp Admin_files/application_form_edit.png" title="Edit details for &quot;Chants Libres&quot; Compagnie Lyrique De Creation"></a></td>
+</tr>
+<tr class="alt-row">
+  <td><a href="http://chimp.local:3000/chimp-admin/beneficiaries/coeur-soleil-de-mascouche-inc">"Coeur Soleil" De Mascouche Inc</a></td>
+  <td style="text-align: center"><img alt="Cross" src="./Chimp Admin_files/cross.png" title="&quot;Coeur Soleil&quot; De Mascouche Inc has had their charity status revoked."></td>
+  <td style="text-align: center"><img alt="Tick" src="./Chimp Admin_files/tick.png" title="&quot;Coeur Soleil&quot; De Mascouche Inc exists in the CRA database."></td>
+  <td><a href="http://chimp.local:3000/admin/for/coeur-soleil-de-mascouche-inc"><img alt="Application_form_edit" src="./Chimp Admin_files/application_form_edit.png" title="Edit details for &quot;Coeur Soleil&quot; De Mascouche Inc"></a></td>
+</tr>
+<tr>
+  <td><a href="http://chimp.local:3000/chimp-admin/beneficiaries/dans-ma-rueprojet-danimation-et-deducation-aupres-de-la-jeunesse">"Dans Ma Rue"Projet D'animation Et D'education Aupres De La Jeunesse</a></td>
+  <td style="text-align: center"><img alt="Cross" src="./Chimp Admin_files/cross.png" title="&quot;Dans Ma Rue&quot;Projet D&#39;animation Et D&#39;education Aupres De La Jeunesse has had their charity status revoked."></td>
+  <td style="text-align: center"><img alt="Tick" src="./Chimp Admin_files/tick.png" title="&quot;Dans Ma Rue&quot;Projet D&#39;animation Et D&#39;education Aupres De La Jeunesse exists in the CRA database."></td>
+  <td><a href="http://chimp.local:3000/admin/for/dans-ma-rueprojet-danimation-et-deducation-aupres-de-la-jeunesse"><img alt="Application_form_edit" src="./Chimp Admin_files/application_form_edit.png" title="Edit details for &quot;Dans Ma Rue&quot;Projet D&#39;animation Et D&#39;education Aupres De La Jeunesse"></a></td>
+</tr>
+
+        </tbody>
+      </table>
+
+    <div class="pagination"><span class="previous_page disabled">← Previous</span> <em>1</em> <a rel="next" href="http://chimp.local:3000/chimp-admin/beneficiaries?page=2">2</a> <a href="http://chimp.local:3000/chimp-admin/beneficiaries?page=3">3</a> <a href="http://chimp.local:3000/chimp-admin/beneficiaries?page=4">4</a> <a href="http://chimp.local:3000/chimp-admin/beneficiaries?page=5">5</a> <a href="http://chimp.local:3000/chimp-admin/beneficiaries?page=6">6</a> <a href="http://chimp.local:3000/chimp-admin/beneficiaries?page=7">7</a> <a href="http://chimp.local:3000/chimp-admin/beneficiaries?page=8">8</a> <a href="http://chimp.local:3000/chimp-admin/beneficiaries?page=9">9</a> <span class="gap">…</span> <a href="http://chimp.local:3000/chimp-admin/beneficiaries?page=49">49</a> <a href="http://chimp.local:3000/chimp-admin/beneficiaries?page=50">50</a> <a class="next_page" rel="next" href="http://chimp.local:3000/chimp-admin/beneficiaries?page=2">Next →</a></div>
+
+  </div>
+</div>
+
+
+      
+      <div id="footer" style="text-align: center;">
+        <small>
+            © Copyright 2008 - 2011 Chimp
+        </small>
+      </div><!-- End #footer -->
+
+    </div> <!-- End #main-content -->
+
+	  <div id="modal-progress" class="hide progress-message">
+	<div id="modal-progress-container">
+		<div id="modal-progress-content">
+			<h3>Please hang on for a second</h3>
+		  	<p>We're loading that for you...</p>
+		</div>
+		<div id="modal-progress-background"></div>
+	</div>
+	<div id="modal-progress-page-cover"></div>
+</div>
+
+    
+  </div>
+  
+  <script type="text/javascript" id="google_analytics">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-18840829-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+  
+  
+  
+
+    <div id="facebox" style="display:none;">       <div class="popup">         <table>           <tbody>             <tr>               <td class="tl"></td><td class="b"></td><td class="tr"></td>             </tr>             <tr>               <td class="b"></td>               <td class="body">                 <div class="content">                 </div>                 <div class="footer">                   <a href="http://chimp.local:3000/chimp-admin/beneficiaries#" class="close">                     <img src="./Chimp Admin_files/closelabel.gif" title="close" class="close_image">                   </a>                 </div>               </td>               <td class="b"></td>             </tr>             <tr>               <td class="bl"></td><td class="b"></td><td class="br"></td>             </tr>           </tbody>         </table>       </div>     </div><div style="display: none; " id="hiddenlpsubmitdiv"></div><script>try{for(var lastpass_iter=0; lastpass_iter < document.forms.length; lastpass_iter++){ var lastpass_f = document.forms[lastpass_iter]; if(typeof(lastpass_f.lpsubmitorig2)=="undefined"){ lastpass_f.lpsubmitorig2 = lastpass_f.submit; lastpass_f.submit = function(){ var form=this; var customEvent = document.createEvent("Event"); customEvent.initEvent("lpCustomEvent", true, true); var d = document.getElementById("hiddenlpsubmitdiv"); for(var i = 0; i < document.forms.length; i++){ if(document.forms[i]==form){ d.innerText=i; } } d.dispatchEvent(customEvent); form.lpsubmitorig2(); } } }}catch(e){}</script></body></html>

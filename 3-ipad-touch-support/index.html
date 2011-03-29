@@ -1,0 +1,91 @@
+<html>
+  <head>
+    <script src="../scripts/coffee-script.js"></script>
+    <script src="../scripts/jquery-1.5.1.js"></script>
+    <script type="text/coffeescript" src="hexagon-math.coffee"></script>
+	  <script type="text/javascript">
+      var supportsTouch = ("createTouch" in document)
+      var that = this
+    </script>
+    <script type="text/coffeescript">
+
+      initialize = ->
+        image     = new Image()
+        image.src	= "../images/hex_tile.png"
+        @dragging = false
+        @canvas   = $("#canvas")[0]
+        @context  = canvas.getContext("2d")
+        @board    = new HexaBoard(image, 12, 11, 45)
+        @offsetX  = 0
+        @offsetY  = 0
+
+        @board.toggle(0, 0).toggle(1, 0).toggle(2, 0).toggle(0, 1)
+        @board.toggle(6, 0).toggle(7, 0).toggle(8, 0).toggle(9, 0).toggle(10, 0).toggle(11, 0)
+        @board.toggle(8, 1).toggle(9, 1).toggle(10, 1).toggle(11, 1).toggle(10, 2).toggle(11, 2)
+        @board.toggle(0, 8).toggle(0, 9).toggle(0, 10).toggle(1, 8).toggle(1, 9).toggle(1, 10)
+        @board.toggle(2, 9).toggle(2, 10).toggle(3, 9).toggle(3, 10).toggle(4, 10)
+        @board.toggle(5, 10).toggle(11, 9).toggle(9, 10).toggle(10, 10).toggle(11, 10)
+
+        redrawCanvas()
+
+        # code to display the 'hover' graphic whenever the mouse moves while not dragging, and
+        # the transformation if the mouse is dragging.
+        @canvas[if @supportsTouch then 'ontouchmove' else 'onmousemove'] = mouseMove
+
+        # code to toggle the hex grid which the user clicked on
+        @canvas[if @supportsTouch then 'ontouchend' else 'onmouseup'] = mouseUp
+
+        # code to toggle the mouse down action which is the start of our drag event.
+        @canvas[if @supportsTouch then 'ontouchstart' else 'onmousedown'] = mouseDown
+
+      mouseMove = (event) ->
+        if that.dragging
+          deltaX          = that.dragging.startX - eventX(event)
+          deltaY          = that.dragging.startY - eventY(event)
+          that.offsetX    = that.offsetX - deltaX
+          that.offsetY    = that.offsetY - deltaY
+          that.dragging   = { startX: eventX(event), startY: eventY(event), hasDragged: true }
+
+          event.preventDefault() if event.touches
+          redrawCanvas()
+        else
+          board.enableAtPoint(eventX(event) - that.offsetX, eventY(event) - that.offsetY)
+          redrawCanvas()
+
+      mouseUp = (event) ->
+        unless that.dragging and that.dragging.hasDragged
+          board.toggleAtPoint(eventX(event) - that.offsetX, eventY(event) - that.offsetY)
+          redrawCanvas()
+        that.dragging = false
+
+      mouseDown = (event) ->
+        that.dragging = { startX: eventX(event), startY: eventY(event), hasDragged: false }
+
+      eventX = (event) ->
+        out = event.pageX
+        out = event.touches[0].pageX if event.touches
+        out
+
+      eventY = (event) ->
+        out = event.pageY
+        out = event.touches[0].pageY if event.touches
+        out
+
+      redrawCanvas = ->
+        @context.clearRect(0, 0, @canvas.width, @canvas.height)
+        @board.each (grid) -> grid.draw(@context, @offsetX, @offsetY)
+
+      $(document).ready ->
+        # javascript hack - since the coffeescript is loaded after
+        # this point.
+        setTimeout(initialize, 500)
+
+    </script>
+  </head>
+
+  <title>Hexagon Coordinate Math Demo</title>
+
+  <body>
+      <canvas width="900" height="600" id="canvas">Your browser doesn't support Canvas YO!</canvas>
+  </body>
+</html>
