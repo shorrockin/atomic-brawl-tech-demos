@@ -39,4 +39,3 @@ require requirements.concat(tests), (log, assert) ->
     failures = failures + results[1]
 
   log.debug "Unit Tests Complete. #{passes} passing tests, #{failures} failures"
-

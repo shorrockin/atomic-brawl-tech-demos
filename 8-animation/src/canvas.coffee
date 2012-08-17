@@ -125,7 +125,7 @@ define ['jquery', 'log', 'constants', 'utils/HashMap', 'ui/LayerList', 'ui/Dirty
       context.beginPath()
       canvas.dirty.each (rectangle) ->
         context.clearRect(rectangle.x, rectangle.y, rectangle.width, rectangle.height)
-        context.rect(rectangle.x - 0.5, rectangle.y - 0.5, rectangle.width + 1, rectangle.height + 1)
+        context.rect(rectangle.x, rectangle.y, rectangle.width, rectangle.height)
       context.closePath()
 
       # set's our clipping context, nothing outside of this will be drawn
